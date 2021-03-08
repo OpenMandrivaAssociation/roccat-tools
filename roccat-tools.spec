@@ -8,6 +8,7 @@ Url:            http://roccat.sourceforge.net
 Source:         http://downloads.sourceforge.net/roccat/%{name}-%{version}.tar.bz2
 Patch0:		0001-Fix-build-with-recent-pango-releases.patch
 Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
+
 BuildRequires:  cmake >= 2.6.4
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  pkgconfig
@@ -25,11 +26,7 @@ BuildRequires:  pkgconfig(libusb-1.0)
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(x11)
 Requires(pre):  shadow
-%if 0%{?suse_version} > 1320
 BuildRequires:  lua-devel
-%else
-BuildRequires:  lua-devel
-%endif
 
 %package -n     roccat-arvo
 Summary:        Roccat Arvo userland tools
@@ -236,7 +233,7 @@ perl -p -i -e 's|\r\n|\n|g' skeltr/roccatskeltrconfig/roccatskeltrconfig.desktop
 %cmake \
     -DWITH_LUA=5.3 
    
-make %{?_smp_mflags}
+%make_build
 
 %install
 cd build
