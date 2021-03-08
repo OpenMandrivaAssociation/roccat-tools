@@ -1,24 +1,6 @@
-#
-# spec file for package roccat-tools
-#
-# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
-
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
-
 Name:           roccat-tools
 Version:	5.9.0
-Release:        2
+Release:        3
 Summary:        Common files shared by all Roccat tools
 License:        GPL-2.0+ AND CC-BY-3.0
 Group:          System/Configuration/Other
@@ -28,9 +10,9 @@ BuildRequires:  cmake >= 2.6.4
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  pkgconfig
 BuildRequires:  python-devel
-#BuildRequires:  update-desktop-files
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(harfbuzz)
 BuildRequires:  pkgconfig(gaminggear-0) >= 0.15.1
 BuildRequires:  pkgconfig(gtk+-2.0) >= 2.20
 BuildRequires:  pkgconfig(gudev-1.0)
