@@ -6,6 +6,9 @@ License:        GPL-2.0+ AND CC-BY-3.0
 Group:          System/Configuration/Other
 Url:            http://roccat.sourceforge.net
 Source:         http://downloads.sourceforge.net/roccat/%{name}-%{version}.tar.bz2
+Patch0:		0001-Fix-build-with-recent-pango-releases.patch
+Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
+
 BuildRequires:  cmake >= 2.6.4
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  pkgconfig
@@ -13,6 +16,7 @@ BuildRequires:  python-devel
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(harfbuzz)
+BuildRequires:	pkgconfig(pango)
 BuildRequires:  pkgconfig(gaminggear-0) >= 0.15.1
 BuildRequires:  pkgconfig(gtk+-2.0) >= 2.20
 BuildRequires:  pkgconfig(gudev-1.0)
@@ -22,11 +26,7 @@ BuildRequires:  pkgconfig(libusb-1.0)
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(x11)
 Requires(pre):  shadow
-%if 0%{?suse_version} > 1320
 BuildRequires:  lua-devel
-%else
-BuildRequires:  lua-devel
-%endif
 
 %package -n     roccat-arvo
 Summary:        Roccat Arvo userland tools
@@ -226,13 +226,14 @@ of a Roccat Skeltr mechanical keybard.
 
 %prep
 %setup -q -n roccat-tools-%{version}
+%autopatch -p1
 perl -p -i -e 's|\r\n|\n|g' skeltr/roccatskeltrconfig/roccatskeltrconfig.desktop
 
 %build
 %cmake \
     -DWITH_LUA=5.3 
    
-make %{?_smp_mflags}
+%make_build
 
 %install
 cd build

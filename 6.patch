@@ -1,0 +1,31 @@
+From a415a357502bb04a1a6c17d2944bde81a63b8b55 Mon Sep 17 00:00:00 2001
+From: Nicolas Roeser <Nicolas.Roeser@rz.uni-regensburg.de>
+Date: Sun, 17 May 2020 23:30:07 +0200
+Subject: [PATCH] Prevent duplicate symbol definitions
+
+Change a symbol which defines a _number of milliseconds_ from an enum
+constant to a preprocessor macro. This is semantically more correct in
+my opinion.
+The change particularly helps linking the binary when compiled with GCC
+with -fno-common (see
+<https://gcc.gnu.org/gcc-10/porting_to.html#common>) as there are no
+more duplicate definitions.
+---
+ ryosmk/libroccatryosmk/ryos_device.h | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/ryosmk/libroccatryosmk/ryos_device.h b/ryosmk/libroccatryosmk/ryos_device.h
+index 338c570..e654dd2 100644
+--- a/ryosmk/libroccatryosmk/ryos_device.h
++++ b/ryosmk/libroccatryosmk/ryos_device.h
+@@ -22,9 +22,7 @@
+ 
+ G_BEGIN_DECLS
+ 
+-enum {
+-	RYOS_WRITE_CHECK_WAIT_LIGHT_CONTROL = 10,
+-} RyosWriteCheckWait;
++#define RYOS_WRITE_CHECK_WAIT_LIGHT_CONTROL 10
+ 
+ /*
+  * write selection: (before profile specific read)
