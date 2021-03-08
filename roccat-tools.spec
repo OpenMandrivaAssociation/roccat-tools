@@ -7,6 +7,7 @@ Group:          System/Configuration/Other
 Url:            http://roccat.sourceforge.net
 Source:         http://downloads.sourceforge.net/roccat/%{name}-%{version}.tar.bz2
 Patch0:		0001-Fix-build-with-recent-pango-releases.patch
+Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
 BuildRequires:  cmake >= 2.6.4
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  pkgconfig
