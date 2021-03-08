@@ -13,6 +13,7 @@ BuildRequires:  python-devel
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(harfbuzz)
+BuildRequires:	pkgconfig(pango)
 BuildRequires:  pkgconfig(gaminggear-0) >= 0.15.1
 BuildRequires:  pkgconfig(gtk+-2.0) >= 2.20
 BuildRequires:  pkgconfig(gudev-1.0)
