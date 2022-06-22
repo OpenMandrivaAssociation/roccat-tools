@@ -1,6 +1,6 @@
 Name:           roccat-tools
 Version:	5.9.0
-Release:        3
+Release:        4
 Summary:        Common files shared by all Roccat tools
 License:        GPL-2.0+ AND CC-BY-3.0
 Group:          System/Configuration/Other
