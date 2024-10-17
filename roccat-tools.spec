@@ -4,7 +4,7 @@ Release:        5
 Summary:        Common files shared by all Roccat tools
 License:        GPL-2.0+ AND CC-BY-3.0
 Group:          System/Configuration/Other
-Url:            http://roccat.sourceforge.net
+Url:            https://roccat.sourceforge.net
 Source:         http://downloads.sourceforge.net/roccat/%{name}-%{version}.tar.bz2
 Patch0:		0001-Fix-build-with-recent-pango-releases.patch
 Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
