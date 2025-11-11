@@ -10,6 +10,7 @@ Patch0:		0001-Fix-build-with-recent-pango-releases.patch
 Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
 
 BuildRequires:  cmake >= 2.6.4
+BuildRequires:	gettext
 BuildRequires:  hicolor-icon-theme
 BuildRequires:  pkgconfig
 BuildRequires:  python-devel
