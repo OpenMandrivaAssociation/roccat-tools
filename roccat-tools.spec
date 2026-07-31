@@ -1,13 +1,13 @@
 Name:           roccat-tools
-Version:	5.9.0
-Release:        5
+Version:	5.9.1
+Release:        1
 Summary:        Common files shared by all Roccat tools
 License:        GPL-2.0+ AND CC-BY-3.0
 Group:          System/Configuration/Other
 Url:            https://roccat.sourceforge.net
 Source:         http://downloads.sourceforge.net/roccat/%{name}-%{version}.tar.bz2
-Patch0:		0001-Fix-build-with-recent-pango-releases.patch
-Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
+# dropped (no longer applies): Patch0:		0001-Fix-build-with-recent-pango-releases.patch
+# dropped (no longer applies): Patch1:		https://patch-diff.githubusercontent.com/raw/roccat-linux/roccat-tools/pull/6.patch
 
 BuildRequires:  cmake >= 2.6.4
 BuildRequires:  hicolor-icon-theme
