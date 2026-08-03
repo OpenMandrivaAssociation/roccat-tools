@@ -27,7 +27,8 @@ BuildRequires:  pkgconfig(libusb-1.0)
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(x11)
 Requires(pre):  shadow
-BuildRequires:  lua-devel
+# Lua 5.4 is not supported yet
+BuildRequires:  lua5.3-devel
 
 %package -n     roccat-arvo
 Summary:        Roccat Arvo userland tools
